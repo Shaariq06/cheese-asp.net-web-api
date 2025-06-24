@@ -33,8 +33,7 @@ namespace WebApplication1.Repositories
         public async Task<Cheese?> UpdateCheeseAsync(Guid id, Cheese cheese)
         {
             var existingCheese = await _context.Cheeses.FindAsync(id);
-            if (existingCheese == null)
-                return null;
+            if (existingCheese == null) return null;
 
             existingCheese.Name = cheese.Name;
             existingCheese.Type = cheese.Type;

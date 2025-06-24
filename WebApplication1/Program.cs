@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Data;
+using WebApplication1.Mappings;
 using WebApplication1.Repositories;
 using WebApplication1.Services;
 
@@ -14,6 +15,7 @@ builder.Services.AddScoped<ICheeseRepository, CheeseRepository>();
 builder.Services.AddScoped<ICheeseService, CheeseService>();
 builder.Services.AddDbContext<CheeseDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("CheeseConnectionString")));
+builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 
 var app = builder.Build();
 
