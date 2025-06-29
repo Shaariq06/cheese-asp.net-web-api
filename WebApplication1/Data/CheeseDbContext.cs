@@ -5,7 +5,7 @@ namespace WebApplication1.Data
 {
     public class CheeseDbContext : DbContext
     {
-        public CheeseDbContext(DbContextOptions dbContextOptions)
+        public CheeseDbContext(DbContextOptions<CheeseDbContext> dbContextOptions)
             : base(dbContextOptions) { }
 
         public DbSet<Cheese> Cheeses { get; set; }

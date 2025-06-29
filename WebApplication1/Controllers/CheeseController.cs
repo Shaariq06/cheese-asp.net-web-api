@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models.Domain;
 using WebApplication1.Models.DTO;
@@ -8,6 +9,7 @@ namespace WebApplication1.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class CheeseController : ControllerBase
     {
         private readonly ICheeseService _cheeseService;
